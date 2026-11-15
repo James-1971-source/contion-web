@@ -6153,7 +6153,7 @@ async function run(all){if(running||busy())return;if(!(await ensure()))return;ru
 
 /* ===== 패널 ===== */
 function card(){const p=pref();const d=document.createElement('div');d.className='card u22-voice';
- d.innerHTML='<strong>자연스러운 AI 음성 <span class="badge">무료 · 내 PC에서 합성</span></strong><p class="hint">위 해설 원고를 사람 같은 목소리로 읽어 이 장면의 나레이션으로 넣습니다. 처음 한 번 음성 모델을 내려받습니다.</p>'+
+ d.innerHTML='<strong>자연스러운 AI 음성 <span class="badge">무료 · 내 PC에서 합성</span></strong><p class="hint">위 해설 원고를 사람 같은 목소리로 읽어 이 장면의 나레이션으로 넣습니다. 처음 한 번 음성 모델(약 380MB)을 내려받고, 그다음부터는 인터넷 없이도 됩니다. 한 문장에 20~40초쯤 걸립니다.</p>'+
  '<label>목소리</label><select class="full" data-k="voice">'+VOICES.map(([id,l])=>'<option value="'+id+'"'+((p.voice||'F1')===id?' selected':'')+'>'+l+'</option>').join('')+'</select>'+
  '<div class="grid2"><div><label>말 빠르기 <output>'+(p.speed||1.15).toFixed(2)+'배</output></label><input type="range" data-k="speed" min="0.8" max="1.5" step="0.05" value="'+(p.speed||1.15)+'"></div><div><label>품질</label><select data-k="steps">'+QUALITY.map(([v,l])=>'<option value="'+v+'"'+((p.steps||8)===v?' selected':'')+'>'+l+'</option>').join('')+'</select></div></div>'+
  '<button type="button" class="primary full" data-go="one"'+(running?' disabled':'')+'>'+(running?'만드는 중…':'이 장면 AI 음성 만들기')+'</button><button type="button" class="full" data-go="all"'+(running?' disabled':'')+'>원고가 있는 모든 장면 한 번에 만들기</button><p class="hint" id="u22Status">'+esc(status||'')+'</p>'+(self.crossOriginIsolated?'':'<p class="hint">지금은 느린 방식으로 합성합니다. 페이지를 한 번 새로고침하면 약 4배 빨라집니다.</p>')+'<p class="hint">Supertone Supertonic 3 (OpenRAIL-M). 사칭·속이기 용도 금지. 영상에는 AI 음성임을 밝혀 주세요.</p>';
