@@ -2,7 +2,7 @@
  * - 프로그램 파일을 PC에 보관해 인터넷 없이도 실행
  * - 새 버전이 올라오면 백그라운드로 받아 두고, 화면에서 "지금 적용"을 누르면 교체
  * - 멀티스레드 음성 합성을 위해 교차 출처 격리 헤더(COOP/COEP)를 붙여 줌 */
-const VERSION = '3.3-2f6bed073c';
+const VERSION = '3.3-2a1758faa3';
 const CORE = 'contion-core-' + VERSION;
 const FILES = ['./', 'index.html', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png',
   'vendor/ort/ort.wasm.min.js', 'vendor/ort/ort-wasm-simd-threaded.mjs', 'vendor/ort/ort-wasm-simd-threaded.wasm'];
@@ -34,7 +34,7 @@ self.addEventListener('fetch', e => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
-  if (url.pathname.endsWith('/version.json')) return; // 항상 최신 정보
+  if (url.pathname.endsWith('/version.json') || url.pathname.endsWith('/access.json')) return; // 항상 최신 정보
   e.respondWith((async () => {
     const c = await caches.open(CORE);
     const key = req.mode === 'navigate' ? new Request('index.html') : req;
