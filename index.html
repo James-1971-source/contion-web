@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>콘티온 ContiOn</title><style>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>콘티온 ContiOn</title><meta name="theme-color" content="#0f766e"><meta name="description" content="설치 없이 브라우저에서 쓰는 무료 영상 편집기 콘티온"><style>
 :root{--ink:#202124;--muted:#687078;--line:#dfe3e9;--blue:#0b57d0;--bg:#f1f4f9;--sel:#d3e3fd}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px 'Segoe UI','Malgun Gothic',sans-serif}button,input,select,textarea{font:inherit}button{border:0;background:transparent;color:inherit;cursor:pointer;border-radius:8px;padding:8px 12px}button:hover{background:#e6ebf3}button:disabled{opacity:.45;cursor:default}button.primary{background:var(--blue);color:white}button.soft{background:#d3e3fd;color:#0842a0}input,select,textarea{border:1px solid #c9d0db;border-radius:7px;padding:8px;background:#fff;color:var(--ink);max-width:100%}input[type=color]{padding:3px;width:46px;height:34px}input[type=range]{padding:0;width:100%}input[type=checkbox]{width:auto}textarea{width:100%;resize:vertical;min-height:90px;line-height:1.6}label{display:block;font-size:12px;color:var(--muted);margin:12px 0 5px}.row{display:flex;align-items:center;gap:8px}.row>*{min-width:0}.grow{flex:1}.titlebar{height:64px;display:flex;align-items:center;padding:6px 20px;gap:14px;background:#f8fafd}.logo{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#21b394,#1376b4);display:grid;place-items:center;color:#fff;font-size:23px;font-weight:bold}.projecttitle{font-size:20px;background:transparent;border:1px solid transparent;padding:3px 7px;width:300px}.projecttitle:focus{background:white;border-color:#0b57d0}.sub{font-size:11px;color:var(--muted);padding-left:8px}.menubar{height:34px;background:#f8fafd;padding-left:65px;display:flex;align-items:center;gap:2px}.menubar button{padding:5px 10px}.toolbar{margin:0 14px;border-radius:24px;background:#e8edf6;min-height:43px;display:flex;align-items:center;gap:4px;padding:4px 14px}.sep{height:22px;background:#c5cdd9;width:1px;margin:0 8px}.toolbar select{border:0;background:transparent;padding:4px}.workspace{height:calc(100vh - 141px);min-height:550px;display:grid;grid-template-columns:minmax(400px,1fr) 296px 74px;grid-template-rows:minmax(250px,1fr) 202px;gap:0}.stage-area{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:25px 32px 12px;overflow:hidden}.canvas-wrap{position:relative;box-shadow:0 3px 15px #23314c18;max-width:100%;max-height:calc(100% - 35px);aspect-ratio:16/9;background:white}.canvas-wrap canvas{width:100%;height:100%;display:block;touch-action:none}.stage-note{font-size:11px;color:#68778a;margin-top:14px}.inspector{grid-row:1/3;grid-column:2;background:white;border-radius:14px 0 0 0;margin-top:10px;overflow:auto;padding:20px 18px;border-left:1px solid #e3e8ef}.panelhead{font-size:17px;font-weight:600;margin-bottom:18px;display:flex;justify-content:space-between;align-items:center}.rail{grid-row:1/3;grid-column:3;overflow:auto;background:#f8fafd;display:flex;flex-direction:column;gap:5px;padding:14px 4px}.rail button{font-size:11px;min-height:61px;padding:6px 2px}.rail button b{display:block;font-size:23px;font-weight:400;margin-bottom:4px}.rail button.active{background:#d3e3fd;color:#0b57d0}.timeline{grid-column:1;grid-row:2;border-top:1px solid var(--line);background:#f8fafd;padding:7px 20px;overflow:hidden}.transport{display:flex;align-items:center;gap:10px;height:36px}.transport time{font-size:12px;font-variant-numeric:tabular-nums;min-width:110px}.scrub{flex:1}.scene-list{display:flex;gap:13px;overflow:auto;padding:9px 2px 4px;height:114px}.scene{position:relative;flex:0 0 142px;cursor:pointer}.scene canvas{width:142px;height:80px;background:white;border:2px solid #c9d1dd;border-radius:8px;display:block}.scene.selected canvas{border:3px solid #0b57d0}.scene small{display:flex;justify-content:space-between;padding:3px;color:#5b6471;font-size:10px}.sceneadd{border:1px dashed #acbbce;min-width:50px;height:80px;margin-top:0}.audio-track{font-size:10px;color:#466b60;background:#dcefe8;border-radius:4px;padding:3px 8px;margin-top:2px;white-space:nowrap;overflow:hidden}.hint{color:#697482;font-size:12px;line-height:1.65}.card{border:1px solid #dce2ed;border-radius:10px;padding:12px;margin:10px 0}.card.selected{border-color:var(--blue)}.full{width:100%}.stack{display:flex;flex-direction:column;gap:8px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.swatches{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.swatches button{width:29px;height:29px;border-radius:50%;border:1px solid #ddd}.template{width:100%;height:92px;text-align:left;padding:14px;margin-bottom:10px;border-radius:10px;position:relative;overflow:hidden}.template strong{font-size:20px;display:block}.template span{font-size:11px;opacity:.8}.danger{color:#b3261e}.badge{display:inline-block;background:#e9f1ff;color:#185abc;font-size:10px;border-radius:4px;padding:3px 6px}.status{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#263445;color:white;padding:12px 20px;border-radius:10px;box-shadow:0 5px 24px #0003;z-index:100;max-width:80%;display:none}.modal{position:fixed;inset:0;background:#17243680;z-index:50;display:none;align-items:center;justify-content:center;padding:25px}.dialog{width:510px;max-height:90vh;overflow:auto;background:white;border-radius:20px;padding:25px;box-shadow:0 20px 90px #0003}.dialog h2{margin:0 0 16px;font-size:21px}.dialog progress{width:100%;height:16px}.dialog .row{margin-top:18px}.layer{display:flex;align-items:center;border-bottom:1px solid #eee;padding:8px 0;gap:5px}.layer button{padding:5px}.pill{border:1px solid #dce2ea;border-radius:20px;font-size:11px;padding:4px 8px}.rec{color:#b3261e;background:#fce8e6}.duration{width:74px}.empty{text-align:center;padding:25px 10px;color:#7a8390}.script-count{text-align:right;font-size:11px;color:#7b8796}.hide{display:none!important}@media(max-width:950px){.workspace{grid-template-columns:minmax(300px,1fr) 245px 62px}.inspector{padding:14px}.stage-area{padding:15px}.projecttitle{width:210px}.titlebar{padding:6px 12px}.titlebar .pill{display:none}}@media(max-width:700px){.workspace{height:auto;grid-template-columns:1fr 58px;grid-template-rows:330px 190px auto}.stage-area{grid-column:1;grid-row:1}.timeline{grid-column:1;grid-row:2}.inspector{grid-column:1;grid-row:3;max-height:600px;margin:0}.rail{grid-column:2;grid-row:1/4}.toolbar{overflow:auto;white-space:nowrap}.menubar{padding-left:10px}.titlebar{gap:5px}.projecttitle{width:165px;font-size:16px}.titlebar button{padding:8px}.sub{font-size:10px}}
 
 /* Studio 1.1 workspace */
@@ -573,8 +573,19 @@ button{transition:transform .08s,filter .08s,background .15s,box-shadow .15s}
 .u30-ok{color:#047857;font-size:13px;margin:8px 0}
 .u30-beat{font-size:14px;margin:6px 0;color:#0f172a}
 .u30-beat b{color:#176d67;font-size:18px}
+
+/* 콘티온 3.3: 알림 띠 · 설치 버튼 · AI 음성 카드 */
+.u23-banner{position:fixed;left:50%;top:84px;transform:translateX(-50%);z-index:900;display:flex;align-items:center;gap:10px;max-width:min(920px,94vw);padding:10px 12px 10px 16px;border-radius:12px;background:#0f172a;color:#e2e8f0;font-size:13px;box-shadow:0 12px 30px rgba(0,0,0,.28)}
+.u23-banner span{flex:1;line-height:1.5}
+.u23-banner button{padding:7px 12px;font-size:12px;border-radius:8px;white-space:nowrap}
+.u23-banner .u23-x{background:none;border:0;color:#94a3b8;padding:4px 6px}
+.u23-steps li{margin:6px 0;line-height:1.6}
+#u23Install{white-space:nowrap}
+.u22-voice .badge{font-size:10px;padding:1px 6px;border-radius:8px;background:#e0f2f1;color:#0f766e;margin-left:4px}
+.u22-voice output{font-weight:600;color:#0f766e;margin-left:4px}
+.u22-voice #u22Status{color:#0f766e;font-weight:600;min-height:1.2em}
 </style></head><body>
-<header class="titlebar"><div class="logo">▷</div><div class="grow"><input id="projectName" aria-label="프로젝트 이름" class="projecttitle" value="나의 첫 번째 동영상"><div class="sub">콘티온 ContiOn 3.2 · 무료 영상 편집</div></div><div class="save-info"><span class="pill" id="saveState" role="status">자동 저장 준비 중</span><span id="fileState" class="file-state">파일 백업 필요</span></div><button id="playTop" class="soft">▷ 미리보기</button><button id="saveProject">파일 백업</button><button class="primary" id="exportTop">영상 내보내기</button></header>
+<header class="titlebar"><div class="logo">▷</div><div class="grow"><input id="projectName" aria-label="프로젝트 이름" class="projecttitle" value="나의 첫 번째 동영상"><div class="sub">콘티온 ContiOn 3.3 · 무료 영상 편집</div></div><div class="save-info"><span class="pill" id="saveState" role="status">자동 저장 준비 중</span><span id="fileState" class="file-state">파일 백업 필요</span></div><button id="playTop" class="soft">▷ 미리보기</button><button id="saveProject">파일 백업</button><button class="primary" id="exportTop">영상 내보내기</button></header>
 <nav class="menubar"><button id="newProject">새 프로젝트</button><button id="openProject">열기</button><button id="undoMenu">실행취소</button><button id="redoMenu">다시 실행</button><button id="recentProjects">최근 프로젝트</button><button id="versions">복구 지점</button><span class="menu-spacer"></span><button id="helpBtn">도움말</button></nav>
 <div class="toolbar"><button id="addScene" title="장면 추가 (Ctrl+M)">＋ 장면</button><span class="sep"></span><button id="undo" title="실행취소">↶</button><button id="redo" title="다시 실행">↷</button><span class="sep"></span><button data-panel="text">T 텍스트</button><button data-panel="shapes">◇ 도형</button><button data-panel="image">▧ 이미지</button><span class="sep"></span><select id="aspect" aria-label="영상 비율"><option value="16:9">가로 16:9</option><option value="9:16">세로 9:16</option><option value="1:1">정사각형 1:1</option></select><select id="zoomSelect" aria-label="편집 화면 확대"><option value="fit">화면 맞춤</option><option value="0.5">50%</option><option value="0.75">75%</option><option value="1">100%</option></select><span class="grow"></span><span id="projectSummary"></span><button id="toggleInspector">속성 숨기기</button><button id="duplicateScene">장면 복제</button><button id="deleteScene" class="danger">장면 삭제</button></div>
 <main class="workspace"><section class="stage-area"><div class="canvas-wrap" id="canvasWrap"><canvas id="stage" width="1280" height="720" aria-label="편집 캔버스: 객체를 드래그하여 이동하고 오른쪽 아래 핸들로 크기를 조절하세요" tabindex="0"></canvas></div><div class="stage-note" id="stageNote">객체를 클릭하여 편집 · 드래그하여 이동 · 모서리로 크기 조절</div></section>
@@ -4340,7 +4351,7 @@ document.body.classList.add('ui18');
 /* ---------- header ---------- */
 const head=$1('.titlebar'),menubar=$1('.menubar'),toolbar=$1('.toolbar');
 const logo=head.querySelector('.logo');logo.innerHTML='<svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><path d="M11 8.5v15l12-7.5z" fill="#fff"/></svg>';
-const sub=head.querySelector('.sub');if(sub)sub.textContent='콘티온 ContiOn 3.2';
+const sub=head.querySelector('.sub');if(sub)sub.textContent='콘티온 ContiOn 3.3';
 const fileWrap=document.createElement('div');fileWrap.className='u8-menu';fileWrap.innerHTML='<button type="button" class="u8-menu-btn" aria-haspopup="true" aria-expanded="false">'+icon('file',18)+'<span>파일</span>'+icon('chevron',14)+'</button><div class="u8-pop" role="menu" hidden></div>';
 const pop=fileWrap.querySelector('.u8-pop'),menuBtn=fileWrap.querySelector('.u8-menu-btn');
 const item=(id,ic,label,hint)=>{const b=document.getElementById(id);if(!b)return;b.className='u8-item';b.setAttribute('role','menuitem');b.innerHTML=icon(ic,17)+'<span>'+label+'</span>'+(hint?'<kbd>'+hint+'</kbd>':'');pop.append(b)};
@@ -6048,18 +6059,166 @@ globalThis.studioQA30={makeSheet,lint,analyzeBeat,beats,nearest,snapScenes,punch
 (()=>{'use strict';
 const $1=s=>document.querySelector(s);
 const isWeb=!/^(127\.0\.0\.1|localhost|\[::1\])$/.test(location.hostname)&&location.protocol!=='file:';
-globalThis.contionEdition={web:isWeb,version:'3.2'};
+globalThis.contionEdition={web:isWeb,version:'3.3'};
 if(!isWeb)return;
 document.documentElement.classList.add('contion-web');
-const sub=$1('.titlebar .sub');if(sub&&!/웹 버전/.test(sub.textContent))sub.textContent=sub.textContent.replace('3.2','3.2 · 웹 버전');
-const NOTE='<div class="card u31-web"><strong>웹 버전 안내</strong><p class="hint">이 기능의 일부(Windows 음성·OpenAI 음성·AI 원고 연결)는 <b>PC 설치 버전</b>에서만 쓸 수 있습니다. 마이크 녹음과 음성 파일 올리기, 오프라인 원고 도우미는 웹 버전에서도 그대로 됩니다.</p></div>';
+const sub=$1('.titlebar .sub');if(sub&&!/웹 버전/.test(sub.textContent))sub.textContent=sub.textContent.replace('3.3','3.3 · 웹 버전');
+const NOTE='<div class="card u31-web"><strong>웹 버전 안내</strong><p class="hint">아래 <b>자연스러운 AI 음성</b>, 마이크 녹음, 음성 파일 올리기, 오프라인 원고 도우미는 웹 버전에서도 그대로 됩니다. Windows 기본 음성·OpenAI 음성·AI 원고 연결만 <b>PC 설치 버전</b> 전용입니다.</p></div>';
 const panel30=renderPanel;
 renderPanel=function(...a){const r=panel30.apply(this,a);if(panel==='voice'||panel==='ai'){const ins=$1('#inspector');if(ins&&!ins.querySelector('.u31-web'))ins.insertAdjacentHTML('afterbegin',NOTE)}return r};
 })();
 
 </script>
 <script>
+/* 콘티온 3.3: 자연스러운 AI 음성(Supertonic 3) — 브라우저 안에서 해설 원고를 나레이션 음성으로 만듭니다.
+ * - 음성 모델: Supertone Supertonic 3 (OpenRAIL-M), 사용자가 동의했을 때만 Hugging Face에서 처음 한 번 내려받아 이 브라우저에 보관
+ * - 실행: onnxruntime-web 1.20.1 (MIT, vendor/ort 동봉) · 별도 작업 스레드(Web Worker)에서 돌려 편집 화면이 멈추지 않음
+ * - 원고·음성은 PC 밖으로 보내지 않습니다. 웹 버전·PC 설치 버전 모두 동작합니다. */
+(()=>{'use strict';
+const $1=s=>document.querySelector(s);
+const MODEL_BASE='https://huggingface.co/Supertone/supertonic-3/resolve/main/';
+const CACHE='contion-voice-supertonic3';
+const CONSENT_KEY='contion-voice-consent';
+const VOICES=[['F1','여성 1 (밝고 또렷함)'],['F2','여성 2'],['F3','여성 3'],['F4','여성 4'],['F5','여성 5'],['M1','남성 1 (차분함, IT톡톡)'],['M2','남성 2'],['M3','남성 3'],['M4','남성 4'],['M5','남성 5']];
+const QUALITY=[[5,'빠름'],[8,'보통 (추천)'],[12,'고품질 (느림)']];
+const busy=()=>playing||exporting;
+const pref=()=>{try{return JSON.parse(localStorage.getItem('contion-voice-pref')||'{}')}catch{return {}}};
+const setPref=p=>{try{localStorage.setItem('contion-voice-pref',JSON.stringify({...pref(),...p}))}catch{}};
+
+/* ===== 작업 스레드 ===== */
+function workerMain(){
+ let ort=null,S=null,cfg=null,idx=null;const styles={};
+ const post=(m)=>postMessage(m);
+ async function cached(url,label,cacheName){const c=await caches.open(cacheName);let r=await c.match(url);if(r)return r;
+  const f=await fetch(url);if(!f.ok)throw Error('download '+f.status+' '+label);
+  const total=Number(f.headers.get('content-length'))||0;const reader=f.body.getReader();const chunks=[];let got=0,last=0;
+  for(;;){const {done,value}=await reader.read();if(done)break;chunks.push(value);got+=value.length;const now=Date.now();if(now-last>400){last=now;post({type:'dl',label,got,total})}}
+  const blob=new Blob(chunks);await c.put(url,new Response(blob,{headers:{'content-type':f.headers.get('content-type')||'application/octet-stream'}}));return new Response(blob)}
+  async function init(base,ortBase,cacheName,ep){
+  if(!ort){importScripts(ortBase+'ort.wasm.min.js');ort=self.ort;ort.env.wasm.wasmPaths=ortBase;ort.env.wasm.numThreads=self.crossOriginIsolated?Math.max(1,Math.min(6,(navigator.hardwareConcurrency||2)-1)):1;ort.env.wasm.proxy=false}
+  if(S)return;
+  cfg=await (await cached(base+'onnx/tts.json','설정',cacheName)).json();
+  idx=await (await cached(base+'onnx/unicode_indexer.json','글자표',cacheName)).json();
+  S={};for(const [k,n] of [['dp','duration_predictor'],['te','text_encoder'],['ve','vector_estimator'],['vo','vocoder']]){
+   const buf=await (await cached(base+'onnx/'+n+'.onnx',n,cacheName)).arrayBuffer();post({type:'stage',text:'음성 엔진 준비 중… ('+n+')'});
+   S[k]=await ort.InferenceSession.create(buf,{executionProviders:['wasm'],graphOptimizationLevel:'basic'})}}
+ async function style(base,id,cacheName){if(styles[id])return styles[id];const j=await (await cached(base+'voice_styles/'+id+'.json','목소리 '+id,cacheName)).json();
+  const t=j.style_ttl,d=j.style_dp;styles[id]={ttl:new ort.Tensor('float32',Float32Array.from(t.data.flat(Infinity)),t.dims),dp:new ort.Tensor('float32',Float32Array.from(d.data.flat(Infinity)),d.dims)};return styles[id]}
+ function prep(text,lang){text=text.normalize('NFKD');text=text.replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{1F1E6}-\u{1F1FF}]+/gu,'');
+  const rep={'–':'-','‑':'-','—':'-','_':' ','\u201C':'"','\u201D':'"','\u2018':"'",'\u2019':"'",'´':"'",'`':"'",'[':' ',']':' ','|':' ','/':' ','#':' ','→':' ','←':' '};for(const [k,v] of Object.entries(rep))text=text.split(k).join(v);
+  text=text.replace(/[♥☆♡©\\]/g,'').split('@').join(' at ');text=text.replace(/ ([,.!?;:'])/g,'$1').replace(/\s+/g,' ').trim();
+  if(!/[.!?;:,'"')\]}…。」』】〉》›»]$/.test(text))text+='.';return '<'+lang+'>'+text+'</'+lang+'>'}
+ function chunks(text,max){const out=[];for(const para of text.trim().split(/\n\s*\n+|\n/).map(s=>s.trim()).filter(Boolean)){let cur='';for(const s of para.split(/(?<=[.!?。])\s+/)){if(cur&&cur.length+s.length+1>max){out.push(cur);cur=s}else cur=cur?cur+' '+s:s}if(cur)out.push(cur)}return out}
+ function randn(){const u=Math.max(1e-4,Math.random()),v=Math.random();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v)}
+ async function infer(text,lang,st,steps,speed){const p=prep(text,lang);const L=p.length;const ids=new BigInt64Array(L);for(let j=0;j<L;j++){const cp=p.codePointAt(j);ids[j]=BigInt(cp<idx.length?idx[cp]:-1)}
+  const tIds=new ort.Tensor('int64',ids,[1,L]),tMask=new ort.Tensor('float32',new Float32Array(L).fill(1),[1,1,L]);
+  const dp=await S.dp.run({text_ids:tIds,style_dp:st.dp,text_mask:tMask});const dur=dp.duration.data[0]/speed;
+  const te=await S.te.run({text_ids:tIds,style_ttl:st.ttl,text_mask:tMask});
+  const sr=cfg.ae.sample_rate,chunk=cfg.ae.base_chunk_size*cfg.ttl.chunk_compress_factor,dim=cfg.ttl.latent_dim*cfg.ttl.chunk_compress_factor;
+  const wavLen=Math.floor(dur*sr),T=Math.max(1,Math.floor((wavLen+chunk-1)/chunk));let xt=new Float32Array(dim*T);for(let i=0;i<xt.length;i++)xt[i]=randn();
+  const lMask=new ort.Tensor('float32',new Float32Array(T).fill(1),[1,1,T]),tot=new ort.Tensor('float32',new Float32Array([steps]),[1]);
+  for(let s=0;s<steps;s++){const out=await S.ve.run({noisy_latent:new ort.Tensor('float32',xt,[1,dim,T]),text_emb:te.text_emb,style_ttl:st.ttl,latent_mask:lMask,text_mask:tMask,current_step:new ort.Tensor('float32',new Float32Array([s]),[1]),total_step:tot});xt=Float32Array.from(out.denoised_latent.data);post({type:'step',step:s+1,steps})}
+  const vo=await S.vo.run({latent:new ort.Tensor('float32',xt,[1,dim,T])});const w=vo.wav_tts.data;return w.slice(0,Math.min(w.length,Math.floor(dur*sr)))}
+ onmessage=async(ev)=>{const m=ev.data;try{
+  if(m.type==='init'){await init(m.base,m.ortBase,m.cache,m.ep);post({type:'ready',sr:cfg.ae.sample_rate,threads:ort.env.wasm.numThreads});return}
+  if(m.type==='synth'){await init(m.base,m.ortBase,m.cache,m.ep);const st=await style(m.base,m.voice,m.cache);const parts=chunks(m.text,m.lang==='ko'?120:300);const sr=cfg.ae.sample_rate;const gap=new Float32Array(Math.floor(sr*.25));const out=[];
+   for(let i=0;i<parts.length;i++){post({type:'stage',text:'음성 만드는 중… '+(i+1)+'/'+parts.length+' 문장'});const w=await infer(parts[i],m.lang,st,m.steps,m.speed);if(out.length)out.push(gap);out.push(w)}
+   let n=0;for(const a of out)n+=a.length;const all=new Float32Array(n);let o=0;for(const a of out){all.set(a,o);o+=a.length}
+   post({type:'done',id:m.id,sr,wav:all},[all.buffer]);return}
+ }catch(e){post({type:'error',id:m.id,message:String(e&&e.message||e)})}};
+}
+let worker=null,ready=false,pending=null;
+function getWorker(){if(worker)return worker;const url=URL.createObjectURL(new Blob(['('+workerMain.toString()+')()'],{type:'text/javascript'}));worker=new Worker(url);worker.onmessage=ev=>{const m=ev.data;if(pending?.onMsg)pending.onMsg(m)};worker.onerror=e=>{if(pending)pending.reject(Error(e.message||'음성 엔진 오류'))};return worker}
+const ortBase=()=>new URL('vendor/ort/',location.href).href;
+function call(msg,onMsg){return new Promise((resolve,reject)=>{const id=Math.random().toString(36).slice(2);pending={onMsg:m=>{onMsg?.(m);if(m.type==='done'&&m.id===id){pending=null;resolve(m)}else if(m.type==='ready'&&msg.type==='init'){pending=null;resolve(m)}else if(m.type==='error'){pending=null;reject(Error(m.message))}},reject};getWorker().postMessage({...msg,id,base:MODEL_BASE,ortBase:ortBase(),cache:CACHE})})}
+
+/* ===== 동의 ===== */
+function consented(){try{return localStorage.getItem(CONSENT_KEY)==='yes'}catch{return false}}
+async function modelCached(){try{const c=await caches.open(CACHE);return !!(await c.match(MODEL_BASE+'onnx/vector_estimator.onnx'))}catch{return false}}
+function askConsent(){return new Promise(res=>{modal('<h2>자연스러운 AI 음성 사용 동의</h2><p>처음 한 번 <b>음성 모델(약 380MB)</b>을 내려받아 이 브라우저에 보관합니다. 이후에는 인터넷 없이도 쓸 수 있습니다.</p><ul class="hint"><li>모델: Supertone <b>Supertonic 3</b> (무료 · OpenRAIL-M 라이선스) · 받는 곳: huggingface.co</li><li>해설 원고와 만든 음성은 <b>PC 밖으로 보내지 않습니다.</b> 이 PC 안에서만 합성합니다.</li><li>다음 용도로는 쓸 수 없습니다: 실제 사람인 것처럼 속이기, 남의 목소리를 흉내 내 사칭하기, 거짓 정보·혐오·괴롭힘, 법에 어긋나는 용도. 영상에 쓸 때는 <b>AI 음성임을 밝히는 것</b>을 권합니다.</li><li>인터넷이 느리면 몇 분 걸릴 수 있습니다. 와이파이에서 받는 것을 권합니다.</li></ul><div class="row"><button id="u22No">취소</button><button id="u22Yes" class="primary">동의하고 사용</button></div>');$1('#u22No').onclick=()=>{closeModal();res(false)};$1('#u22Yes').onclick=()=>{try{localStorage.setItem(CONSENT_KEY,'yes')}catch{}closeModal();res(true)}})}
+
+/* ===== 합성 → 장면에 넣기 ===== */
+function finishWav(w,sr){let a=0,b=w.length;while(a<b&&Math.abs(w[a])<.012)a++;while(b>a&&Math.abs(w[b-1])<.012)b--;const pad=Math.floor(sr*.05);const cut=w.slice(Math.max(0,a-pad),Math.min(w.length,b+pad));let peak=0;for(const v of cut)peak=Math.max(peak,Math.abs(v));const k=peak>0?.89/peak:1;for(let i=0;i<cut.length;i++)cut[i]*=k;return cut}
+let running=false,status='';
+function setStatus(t){status=t;const el=$1('#u22Status');if(el)el.textContent=t}
+async function ensure(){if(!consented()&&!(await modelCached())){if(!(await askConsent()))return false}return true}
+async function synth(text){const p=pref();const msg=await call({type:'synth',text,lang:'ko',voice:p.voice||'F1',speed:p.speed||1.15,steps:p.steps||8},m=>{if(m.type==='dl')setStatus('음성 모델 내려받는 중 ('+m.label+') '+(m.got/1048576).toFixed(0)+(m.total?' / '+(m.total/1048576).toFixed(0):'')+' MB · 처음 한 번만');else if(m.type==='stage')setStatus(m.text);else if(m.type==='step')setStatus(status.replace(/ · \d+\/\d+단계$/,'')+' · '+m.step+'/'+m.steps+'단계')});
+ const w=finishWav(msg.wav,msg.sr);const ch=[w];const blob=new Blob([wavFromSamples(ch,msg.sr)],{type:'audio/wav'});const src=await readData(blob);const buf=await decode(src);return {src,duration:buf.duration}}
+async function voiceScene(i,label){const s=project.scenes[i];const text=String(s.script||'').trim();if(!text)return false;const r=await synth(text);const v=VOICES.find(x=>x[0]===(pref().voice||'F1'));checkpoint();s.voice={name:'AI 음성 · '+(v?v[1].split(' (')[0]:'')+' (Supertonic)',src:r.src,duration:r.duration};delete s.voiceEdit;s.duration=Math.max(s.duration,Math.ceil((r.duration+.3)*10)/10);return true}
+async function run(all){if(running||busy())return;if(!(await ensure()))return;running=true;renderPanel();const t0=performance.now();let n=0;
+ try{if(all){const idxs=project.scenes.map((s,i)=>String(s.script||'').trim()?i:-1).filter(i=>i>=0);if(!idxs.length)throw Error('해설 원고가 있는 장면이 없습니다.');for(const [k,i] of idxs.entries()){setStatus((k+1)+'/'+idxs.length+' 장면 준비 중…');if(await voiceScene(i))n++}}else{if(!String(scene().script||'').trim())throw Error('해설 원고를 먼저 쓰세요.');if(await voiceScene(selectedScene))n++}
+  refresh();queueAutosave();toast(n+'개 장면에 AI 음성을 넣었습니다 ('+((performance.now()-t0)/1000).toFixed(0)+'초). 영상 출력에도 포함됩니다.')}
+ catch(e){const m=String(e.message||e);toast(/Failed to fetch|NetworkError|download/.test(m)?'음성 모델을 받지 못했습니다. 인터넷 연결을 확인하세요.':/memory|allocation|RangeError/i.test(m)?'메모리가 부족합니다. 다른 탭·프로그램을 닫고 다시 시도하세요.':'AI 음성 만들기 실패: '+m.slice(0,140))}
+ finally{running=false;status='';renderPanel()}}
+
+/* ===== 패널 ===== */
+function card(){const p=pref();const d=document.createElement('div');d.className='card u22-voice';
+ d.innerHTML='<strong>자연스러운 AI 음성 <span class="badge">무료 · 내 PC에서 합성</span></strong><p class="hint">위 해설 원고를 사람 같은 목소리로 읽어 이 장면의 나레이션으로 넣습니다. 처음 한 번 음성 모델을 내려받습니다.</p>'+
+ '<label>목소리</label><select class="full" data-k="voice">'+VOICES.map(([id,l])=>'<option value="'+id+'"'+((p.voice||'F1')===id?' selected':'')+'>'+l+'</option>').join('')+'</select>'+
+ '<div class="grid2"><div><label>말 빠르기 <output>'+(p.speed||1.15).toFixed(2)+'배</output></label><input type="range" data-k="speed" min="0.8" max="1.5" step="0.05" value="'+(p.speed||1.15)+'"></div><div><label>품질</label><select data-k="steps">'+QUALITY.map(([v,l])=>'<option value="'+v+'"'+((p.steps||8)===v?' selected':'')+'>'+l+'</option>').join('')+'</select></div></div>'+
+ '<button type="button" class="primary full" data-go="one"'+(running?' disabled':'')+'>'+(running?'만드는 중…':'이 장면 AI 음성 만들기')+'</button><button type="button" class="full" data-go="all"'+(running?' disabled':'')+'>원고가 있는 모든 장면 한 번에 만들기</button><p class="hint" id="u22Status">'+esc(status||'')+'</p>'+(self.crossOriginIsolated?'':'<p class="hint">지금은 느린 방식으로 합성합니다. 페이지를 한 번 새로고침하면 약 4배 빨라집니다.</p>')+'<p class="hint">Supertone Supertonic 3 (OpenRAIL-M). 사칭·속이기 용도 금지. 영상에는 AI 음성임을 밝혀 주세요.</p>';
+ d.querySelector('[data-k="voice"]').onchange=e=>setPref({voice:e.target.value});
+ d.querySelector('[data-k="steps"]').onchange=e=>setPref({steps:Number(e.target.value)});
+ const sp=d.querySelector('[data-k="speed"]');sp.oninput=()=>{sp.previousElementSibling.querySelector('output').textContent=Number(sp.value).toFixed(2)+'배'};sp.onchange=()=>setPref({speed:Number(sp.value)});
+ d.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>run(b.dataset.go==='all'));return d}
+const panel32=renderPanel;
+renderPanel=function(...a){const r=panel32.apply(this,a);if(panel==='voice'){const ins=$1('#inspector');const anchor=[...ins.querySelectorAll('.card')].find(c=>/TTS 음성 파일 만들기/.test(c.querySelector('strong')?.textContent||''));const c=card();if(anchor)anchor.before(c);else ins.append(c)}return r};
+globalThis.contionVoice={run,synth,voices:VOICES.map(v=>v[0]),modelCached};
+})();
+
+</script>
+<script>
+/* 콘티온 3.3: 앱 설치 · 오프라인 실행 · 새 버전 알림
+ * 웹 버전(contion.moaonlabs.com): 서비스 워커로 프로그램을 PC에 보관 → 인터넷 없이도 실행, '내 PC에 설치'(앱 설치) 버튼,
+ *   새 버전을 올리면 백그라운드에서 받아 두고 "지금 적용" 안내.
+ * PC 설치 버전(127.0.0.1): 실행할 때 contion.moaonlabs.com/version.json을 확인해 새 버전이 있으면 다운로드 안내. */
+(()=>{'use strict';
+const $1=s=>document.querySelector(s);
+const APP_VERSION=(globalThis.contionEdition&&globalThis.contionEdition.version)||'3.3';
+const WEB_HOME='https://contion.moaonlabs.com/';
+const DOWNLOAD_PAGE='https://moaonlabs.com/services/contion/#install';
+const isWeb=!!(globalThis.contionEdition&&globalThis.contionEdition.web);
+const standalone=()=>matchMedia('(display-mode: standalone)').matches||matchMedia('(display-mode: window-controls-overlay)').matches||navigator.standalone===true;
+const cmp=(a,b)=>{const x=String(a).split('.').map(Number),y=String(b).split('.').map(Number);for(let i=0;i<Math.max(x.length,y.length);i++){const d=(x[i]||0)-(y[i]||0);if(d)return d}return 0};
+
+/* ===== 공통: 화면 위 알림 띠 ===== */
+function banner(id,html,actions){let b=document.getElementById(id);if(!b){b=document.createElement('div');b.id=id;b.className='u23-banner';document.body.append(b)}b.innerHTML='<span>'+html+'</span>'+actions.map((a,i)=>'<button type="button" data-i="'+i+'" class="'+(a.primary?'primary':'')+'">'+a.label+'</button>').join('')+'<button type="button" class="u23-x" aria-label="닫기">✕</button>';
+ b.onclick=ev=>{const t=ev.target.closest('button');if(!t)return;if(t.classList.contains('u23-x')){b.remove();return}const a=actions[Number(t.dataset.i)];a?.run?.();if(a?.close!==false)b.remove()};return b}
+async function saveFirst(){try{if(typeof saveLocal==='function')await saveLocal()}catch{}await new Promise(r=>setTimeout(r,300))}
+
+/* ===== 웹 버전: 서비스 워커 · 앱 설치 ===== */
+let installEvt=null;
+function installGuide(){const edge=/Edg\//.test(navigator.userAgent);modal('<h2>내 PC에 콘티온 설치하기</h2>'+(installEvt?'':'<p>브라우저 메뉴에서 바로 설치할 수 있습니다.</p>')+'<ol class="hint u23-steps">'+(edge?'<li>오른쪽 위 <b>⋯ (설정 및 기타)</b>를 누릅니다.</li><li><b>앱</b> → <b>이 사이트를 앱으로 설치</b>를 누릅니다.</li><li>이름이 ‘콘티온’인지 확인하고 <b>설치</b>를 누릅니다.</li>':'<li>주소창 오른쪽 끝의 <b>설치 아이콘(⊕ 또는 모니터 모양)</b>을 누릅니다.<br>안 보이면 오른쪽 위 <b>⋮</b> → <b>전송, 공유 및 설치</b> → <b>콘티온 설치</b>.</li><li><b>설치</b>를 누릅니다.</li>')+'<li>바탕화면·시작 메뉴에 <b>콘티온 아이콘</b>이 생깁니다. 다음부터는 아이콘으로 여세요.</li></ol><p class="hint">설치한 뒤에는 <b>인터넷이 없어도</b> 편집과 영상 저장이 됩니다(자동 자막·AI 음성은 처음 한 번 모델을 받아 둬야 합니다). 새 버전이 나오면 인터넷이 연결됐을 때 자동으로 받아 “지금 적용” 안내가 뜹니다.</p><p class="hint">인터넷이 없는 교육장 PC에는 <a href="'+DOWNLOAD_PAGE+'" target="_blank" rel="noopener">설치 파일(ZIP)</a>을 USB로 옮겨 설치하세요.</p><div class="row"><button type="button" onclick="closeModal()">닫기</button></div>')}
+async function doInstall(){if(installEvt){const e=installEvt;installEvt=null;e.prompt();const r=await e.userChoice.catch(()=>null);if(r&&r.outcome==='accepted'){toast('콘티온을 설치했습니다. 바탕화면·시작 메뉴의 아이콘으로 여세요.');syncInstallBtn()}else syncInstallBtn();return}installGuide()}
+function syncInstallBtn(){const tb=$1('.titlebar');if(!tb)return;let b=$1('#u23Install');if(!isWeb||standalone()){b?.remove();return}if(!b){b=document.createElement('button');b.id='u23Install';b.type='button';b.className='soft';b.title='콘티온을 이 PC에 앱으로 설치합니다 (인터넷 없이도 실행)';b.innerHTML='⬇ 내 PC에 설치';b.onclick=doInstall;const ref=$1('#playTop')||tb.lastElementChild;tb.insertBefore(b,ref)}}
+if(isWeb){
+ if(!document.querySelector('link[rel=manifest]')){const l=document.createElement('link');l.rel='manifest';l.href='manifest.webmanifest';document.head.append(l)}
+ addEventListener('beforeinstallprompt',e=>{e.preventDefault();installEvt=e;syncInstallBtn()});
+ addEventListener('appinstalled',()=>{installEvt=null;syncInstallBtn()});
+ syncInstallBtn();
+ if('serviceWorker' in navigator&&location.protocol==='https:'){
+  let reloading=false;
+  navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});
+  const offer=(w)=>{banner('u23Update','새 버전의 콘티온이 준비됐습니다. 작업은 자동 저장된 채로 다시 열립니다.',[{label:'지금 적용',primary:true,run:async()=>{toast('작업을 저장하고 새 버전으로 다시 엽니다…');await saveFirst();w.postMessage({type:'skipWaiting'})}},{label:'나중에'}])};
+  navigator.serviceWorker.register('sw.js').then(reg=>{
+   if(reg.waiting&&navigator.serviceWorker.controller)offer(reg.waiting);
+   reg.addEventListener('updatefound',()=>{const w=reg.installing;w?.addEventListener('statechange',()=>{if(w.state==='installed'&&navigator.serviceWorker.controller)offer(w)})});
+   setInterval(()=>reg.update().catch(()=>{}),60*60*1000);
+   if(navigator.serviceWorker.controller&&!crossOriginIsolated)console.info('[contion] 교차 출처 격리 꺼짐');
+  }).catch(err=>console.warn('[contion] 서비스 워커 등록 실패',err));
+ }
+}
+
+/* ===== PC 설치 버전: 새 버전 확인 ===== */
+async function checkPcUpdate(){if(isWeb||!/^https?:$/.test(location.protocol))return;try{const r=await fetch(WEB_HOME+'version.json?t='+Date.now(),{cache:'no-store'});if(!r.ok)return;const v=await r.json();if(!v.version||cmp(v.version,APP_VERSION)<=0)return;const key='contion-skip-'+v.version;if(localStorage.getItem(key))return;
+ banner('u23Update','콘티온 새 버전(<b>'+String(v.version).replace(/[<>&]/g,'')+'</b>)이 나왔습니다. '+String(v.summary||'').replace(/[<>&]/g,'').slice(0,80),[{label:'설치 파일 받기',primary:true,run:()=>window.open(v.download||DOWNLOAD_PAGE,'_blank','noopener')},{label:'설치 방법',close:false,run:()=>modal('<h2>새 버전으로 업데이트하기</h2><ol class="hint u23-steps"><li><b>설치 파일 받기</b>를 눌러 ZIP 파일을 내려받습니다.</li><li>압축을 풀고 <b>PC에 설치하기</b>를 두 번 누릅니다. (지금 쓰던 콘티온 창은 닫으세요)</li><li>바탕화면의 콘티온 아이콘을 다시 누르면 새 버전이 열립니다. <b>작업 목록은 그대로 남습니다.</b></li></ol><div class="row"><button type="button" onclick="closeModal()">닫기</button></div>')},{label:'이 버전 건너뛰기',run:()=>{try{localStorage.setItem(key,'1')}catch{}}}])}catch{}}
+setTimeout(checkPcUpdate,4000);
+globalThis.contionApp={version:APP_VERSION,doInstall,checkPcUpdate,installGuide,isStandalone:standalone};
+})();
+
+</script>
+<script>
 let studioApprovedExportJSON14='';async function studioCheckExportReady(){if(exporting)return false;syncFocused();pause();if(studioPack(project)===studioApprovedExportJSON14)return true;closeModal();if(!await studioRunPreflight())return false;studioApprovedExportJSON14=studioPack(project);return true}const studioExportDialog14=exportDialog;exportDialog=async function(){if(await studioCheckExportReady())return studioExportDialog14();};$('#exportTop').onclick=exportDialog;for(const s of project.scenes)for(const e of s.elements)if(e.caption&&e.captionStyle)e.captionStyle=studioNormalizeCaption15(e.captionStyle);studioInitCore();studioInitStorage();currentTime=Math.min(.8,scene().duration/2);draw();updateClock();
-const studioPreviousHelp15=help;help=function(){modal('<h2>콘티온 ContiOn 3.2 · 새 기능</h2><p><b>3.2 이름이 ‘콘티온(ContiOn)’으로 바뀌었습니다.</b> 콘티(영상 설계도)를 켜서 영상으로 만든다는 뜻입니다. 웹 버전(contion.moaonlabs.com)에서도 설치 없이 쓸 수 있고, 업데이트해도 자동 저장된 작업이 그대로 남도록 저장 방식을 고정했습니다. 이전 버전(S&J Vids Studio)에서 만든 작업은 처음 실행할 때 가져오기를 제안합니다.</p><p><b>3.0 모션·쇼츠 업그레이드</b>: ① 속도 곡선 5종·반복 움직임·스톱모션·순차 등장 ② 장면 카메라(천천히 밀기·팬·펀치인·흔들림·플래시) ③ 인포그래픽 12종(그래프·체크리스트·도장·터미널·순서도·손그림·스포트라이트·숫자 롤) ④ 쇼츠 도구(안전영역 가이드·쇼츠 자막 2종·레이아웃 팩 7종) ⑤ 검수(검수 시트 PNG·화면 점검·음악 박자 맞추기). 왼쪽 메뉴의 <b>인포그래픽·쇼츠·검수</b>에서 시작하세요.</p><p><b>2.9 완성본 다시 받기</b>: MP4 출력에 성공하면 결과 파일을 브라우저 저장소에 자동 보관합니다(최근 5개). 결과 창을 닫았거나 다운로드를 놓쳐도 파일 메뉴 → ‘완성본 다시 받기’에서 미리보기·다운로드·삭제할 수 있습니다.</p><p><b>2.8 큰 프로젝트 안정화</b>: 같은 영상·음성을 파일·자동 저장에 한 번만 보관(.sjvids 새 형식, 200MB 제한 해제) · 자동 저장과 변경 확인이 미디어를 다시 복사하지 않음 · 영상 객체가 많아도 열린 재생기를 12개로 유지 · 오디오 작업 한도를 PC 메모리에 맞춰 자동 확대 · 긴 영상 출력이 중간에 끊겨도 같은 설정으로 다시 출력하면 이어서 진행 · 패키지 저장 오류 수정</p><p><b>2.7 3D 소재 40종</b>: 3D 메뉴가 AI·기술(로봇·로봇 팔·AI 칩·뇌·챗봇 말풍선·코드 창·서버·클라우드·톱니바퀴·전구·비전 AI 눈·드론·DNA), 도시·교통(빌딩·마을·자동차·다리·로켓·비행기), 자연·우주(나무·숲·산맥·바다·꽃·행성·태양계·달), 교육·기타(책·학사모·트로피·하트·별·성장 그래프·번개), 효과·배경으로 나뉩니다. 도형 메뉴에서 스타일(홀로그램 선·유리·입체 색)을 고를 수 있습니다.</p><p><b>2.6 손바닥 홀로그램</b>: 손바닥을 위로 편 영상이 있는 장면에서 3D 소재(지구·도시·정육면체 등)를 고르면 ‘✋ 손바닥 홀로그램’ 카드가 나옵니다. 누르면 3D 소재가 손바닥 위에 떠서 손을 따라 움직이고, 손 기울기에 맞춰 기울며, 주먹을 쥐면 사라졌다가 펴면 나타납니다. 빛기둥·빛 고리·줄무늬(스캔라인)·깜박임이 함께 들어갑니다.</p><p><b>2.5 손 자동 추적 (실험)</b>: 손이 나오는 영상이 있는 장면에서 따라가게 할 사진·스티커·글자를 고르면 속성 패널에 ‘손 자동 추적’ 카드가 나옵니다. ‘손 추적 시작’을 누르면 영상 속 손 위치를 찾아 키프레임을 자동으로 만듭니다. 처음 한 번 손 인식 프로그램(약 21MB)을 동의 후 내려받으며, 영상은 PC 밖으로 보내지 않습니다.</p><p><b>2.4 3D 소재</b>: 왼쪽 메뉴의 <b>3D</b>에서 돌아가는 정육면체·3D 도시(빛나는 경로)·지구·빛나는 격자 바닥·연결망·점 구름을 넣습니다. 배경이 투명해 사진·영상 위에 겹칠 수 있고, 도형 메뉴에서 색·속도·확대를 바꿉니다. 3D 엔진(three.js)은 파일 안에 들어 있어 인터넷 없이 동작합니다.</p><p><b>2.3 키프레임</b>: 객체를 고르고 속성 패널의 ‘키프레임’ 카드에서 ◆ 추가(단축키 K) → 재생 헤더를 옮기고 객체를 끌면 그 시점의 위치·크기·회전·불투명도가 자동 기록됩니다. ‘한 칸 ▶’으로 0.1~1초씩 옮기며 손 같은 대상을 따라가게 만들 수 있습니다. 캔버스에 분홍 점선으로 움직임 경로가 보입니다.</p><p><b>2.3 트랙 타임라인</b>: 아래 타임라인의 ‘트랙’ 탭에서 장면 속 객체를 한 줄씩 보며 막대를 끌어 시간을 옮기고 양끝으로 길이를 바꿉니다. ◆를 누르면 그 키프레임으로 이동합니다.</p><p><b>2.2 긴 영상</b>: 50MB가 넘는 영상(최대 1시간)은 프로젝트에 복사하지 않고 PC의 원본 파일을 <b>연결</b>합니다. 다음에 열 때 연결이 끊겨 있으면 화면 위쪽의 ‘다시 연결’을 누르세요. 10분이 넘거나 연결 영상이 있는 프로젝트는 디스크에 바로 기록하는 긴 영상 출력으로 만듭니다(1시간까지).</p><p><b>2.1 라이브·강의 그래픽</b>: 왼쪽 메뉴의 <b>라이브</b>에서 챕터 제목·댓글 카드·분할 화면·인물 창·화면 꺾쇠·로고 라벨·이름표·숫자 강조·말풍선 라벨을 넣을 수 있습니다. 강조 색은 5가지 중에서 고릅니다.</p><p><b>새 글자 효과</b>: 해독 효과(글자가 섞였다가 제자리), 숫자 올라가기, 깜박이는 커서, 글자 간격. 텍스트 메뉴의 ‘라이브 글자 효과’ 카드에서 바로 적용합니다.</p><p><b>새 도형</b>: 빛 번짐·그라데이션 판·모서리 꺾쇠·테두리 상자·격자 배경. 모든 도형에 빛 번짐과 합성 방식을 줄 수 있습니다.</p><p><b>사진·영상</b>: 테두리·빛 번짐·합성 방식(빛 합성은 검은 배경을 지웁니다), 홀로그램 느낌 버튼.</p><p><b>2.0</b>: 영상 속도 0.25~4배 · 여러 객체 동시 선택(Shift·드래그 박스) · 사진 자르기 · 자동 자막(베타, 동의 후 모델 다운로드)</p><p><b>1.6~1.9</b>: 타임라인 분할·잘라내기 · 소리 믹서 · Full HD 출력 · 글자 스타일 · 필터 · 스티커 · 회전</p><p class="hint">연결한 원본 영상은 프로젝트 파일·백업에 들어가지 않으니 원본을 함께 보관하세요. 자동 저장은 브라우저 데이터 삭제 시 사라지므로 파일 백업을 함께 하세요.</p><button id="s15HelpBase" class="soft full">기본 편집·복구 안내</button><button id="s15HelpClose" class="primary full">닫기</button>');$('#s15HelpBase').onclick=studioPreviousHelp15;$('#s15HelpClose').onclick=closeModal};$('#helpBtn').onclick=help;
+const studioPreviousHelp15=help;help=function(){modal('<h2>콘티온 ContiOn 3.3 · 새 기능</h2><p><b>3.3 자연스러운 AI 음성 · 내 PC에 설치</b>: ‘나레이션’ 메뉴에서 해설 원고를 사람 같은 목소리(10종)로 읽어 나레이션을 만듭니다(Supertonic 3, 처음 한 번 약 380MB 내려받음, PC 밖 전송 없음). 웹 버전은 위쪽 <b>⬇ 내 PC에 설치</b>로 앱처럼 설치하면 인터넷 없이도 실행되고, 새 버전이 나오면 “지금 적용” 안내가 뜹니다.</p><p><b>3.2 이름이 ‘콘티온(ContiOn)’으로 바뀌었습니다.</b> 콘티(영상 설계도)를 켜서 영상으로 만든다는 뜻입니다. 웹 버전(contion.moaonlabs.com)에서도 설치 없이 쓸 수 있고, 업데이트해도 자동 저장된 작업이 그대로 남도록 저장 방식을 고정했습니다. 이전 버전(S&J Vids Studio)에서 만든 작업은 처음 실행할 때 가져오기를 제안합니다.</p><p><b>3.0 모션·쇼츠 업그레이드</b>: ① 속도 곡선 5종·반복 움직임·스톱모션·순차 등장 ② 장면 카메라(천천히 밀기·팬·펀치인·흔들림·플래시) ③ 인포그래픽 12종(그래프·체크리스트·도장·터미널·순서도·손그림·스포트라이트·숫자 롤) ④ 쇼츠 도구(안전영역 가이드·쇼츠 자막 2종·레이아웃 팩 7종) ⑤ 검수(검수 시트 PNG·화면 점검·음악 박자 맞추기). 왼쪽 메뉴의 <b>인포그래픽·쇼츠·검수</b>에서 시작하세요.</p><p><b>2.9 완성본 다시 받기</b>: MP4 출력에 성공하면 결과 파일을 브라우저 저장소에 자동 보관합니다(최근 5개). 결과 창을 닫았거나 다운로드를 놓쳐도 파일 메뉴 → ‘완성본 다시 받기’에서 미리보기·다운로드·삭제할 수 있습니다.</p><p><b>2.8 큰 프로젝트 안정화</b>: 같은 영상·음성을 파일·자동 저장에 한 번만 보관(.sjvids 새 형식, 200MB 제한 해제) · 자동 저장과 변경 확인이 미디어를 다시 복사하지 않음 · 영상 객체가 많아도 열린 재생기를 12개로 유지 · 오디오 작업 한도를 PC 메모리에 맞춰 자동 확대 · 긴 영상 출력이 중간에 끊겨도 같은 설정으로 다시 출력하면 이어서 진행 · 패키지 저장 오류 수정</p><p><b>2.7 3D 소재 40종</b>: 3D 메뉴가 AI·기술(로봇·로봇 팔·AI 칩·뇌·챗봇 말풍선·코드 창·서버·클라우드·톱니바퀴·전구·비전 AI 눈·드론·DNA), 도시·교통(빌딩·마을·자동차·다리·로켓·비행기), 자연·우주(나무·숲·산맥·바다·꽃·행성·태양계·달), 교육·기타(책·학사모·트로피·하트·별·성장 그래프·번개), 효과·배경으로 나뉩니다. 도형 메뉴에서 스타일(홀로그램 선·유리·입체 색)을 고를 수 있습니다.</p><p><b>2.6 손바닥 홀로그램</b>: 손바닥을 위로 편 영상이 있는 장면에서 3D 소재(지구·도시·정육면체 등)를 고르면 ‘✋ 손바닥 홀로그램’ 카드가 나옵니다. 누르면 3D 소재가 손바닥 위에 떠서 손을 따라 움직이고, 손 기울기에 맞춰 기울며, 주먹을 쥐면 사라졌다가 펴면 나타납니다. 빛기둥·빛 고리·줄무늬(스캔라인)·깜박임이 함께 들어갑니다.</p><p><b>2.5 손 자동 추적 (실험)</b>: 손이 나오는 영상이 있는 장면에서 따라가게 할 사진·스티커·글자를 고르면 속성 패널에 ‘손 자동 추적’ 카드가 나옵니다. ‘손 추적 시작’을 누르면 영상 속 손 위치를 찾아 키프레임을 자동으로 만듭니다. 처음 한 번 손 인식 프로그램(약 21MB)을 동의 후 내려받으며, 영상은 PC 밖으로 보내지 않습니다.</p><p><b>2.4 3D 소재</b>: 왼쪽 메뉴의 <b>3D</b>에서 돌아가는 정육면체·3D 도시(빛나는 경로)·지구·빛나는 격자 바닥·연결망·점 구름을 넣습니다. 배경이 투명해 사진·영상 위에 겹칠 수 있고, 도형 메뉴에서 색·속도·확대를 바꿉니다. 3D 엔진(three.js)은 파일 안에 들어 있어 인터넷 없이 동작합니다.</p><p><b>2.3 키프레임</b>: 객체를 고르고 속성 패널의 ‘키프레임’ 카드에서 ◆ 추가(단축키 K) → 재생 헤더를 옮기고 객체를 끌면 그 시점의 위치·크기·회전·불투명도가 자동 기록됩니다. ‘한 칸 ▶’으로 0.1~1초씩 옮기며 손 같은 대상을 따라가게 만들 수 있습니다. 캔버스에 분홍 점선으로 움직임 경로가 보입니다.</p><p><b>2.3 트랙 타임라인</b>: 아래 타임라인의 ‘트랙’ 탭에서 장면 속 객체를 한 줄씩 보며 막대를 끌어 시간을 옮기고 양끝으로 길이를 바꿉니다. ◆를 누르면 그 키프레임으로 이동합니다.</p><p><b>2.2 긴 영상</b>: 50MB가 넘는 영상(최대 1시간)은 프로젝트에 복사하지 않고 PC의 원본 파일을 <b>연결</b>합니다. 다음에 열 때 연결이 끊겨 있으면 화면 위쪽의 ‘다시 연결’을 누르세요. 10분이 넘거나 연결 영상이 있는 프로젝트는 디스크에 바로 기록하는 긴 영상 출력으로 만듭니다(1시간까지).</p><p><b>2.1 라이브·강의 그래픽</b>: 왼쪽 메뉴의 <b>라이브</b>에서 챕터 제목·댓글 카드·분할 화면·인물 창·화면 꺾쇠·로고 라벨·이름표·숫자 강조·말풍선 라벨을 넣을 수 있습니다. 강조 색은 5가지 중에서 고릅니다.</p><p><b>새 글자 효과</b>: 해독 효과(글자가 섞였다가 제자리), 숫자 올라가기, 깜박이는 커서, 글자 간격. 텍스트 메뉴의 ‘라이브 글자 효과’ 카드에서 바로 적용합니다.</p><p><b>새 도형</b>: 빛 번짐·그라데이션 판·모서리 꺾쇠·테두리 상자·격자 배경. 모든 도형에 빛 번짐과 합성 방식을 줄 수 있습니다.</p><p><b>사진·영상</b>: 테두리·빛 번짐·합성 방식(빛 합성은 검은 배경을 지웁니다), 홀로그램 느낌 버튼.</p><p><b>2.0</b>: 영상 속도 0.25~4배 · 여러 객체 동시 선택(Shift·드래그 박스) · 사진 자르기 · 자동 자막(베타, 동의 후 모델 다운로드)</p><p><b>1.6~1.9</b>: 타임라인 분할·잘라내기 · 소리 믹서 · Full HD 출력 · 글자 스타일 · 필터 · 스티커 · 회전</p><p class="hint">연결한 원본 영상은 프로젝트 파일·백업에 들어가지 않으니 원본을 함께 보관하세요. 자동 저장은 브라우저 데이터 삭제 시 사라지므로 파일 백업을 함께 하세요.</p><button id="s15HelpBase" class="soft full">기본 편집·복구 안내</button><button id="s15HelpClose" class="primary full">닫기</button>');$('#s15HelpBase').onclick=studioPreviousHelp15;$('#s15HelpClose').onclick=closeModal};$('#helpBtn').onclick=help;
 
 </script></body></html>

@@ -1,0 +1,17 @@
+{
+  "name": "콘티온 ContiOn - 무료 영상 편집기",
+  "short_name": "콘티온",
+  "description": "설치 없이 브라우저에서 사진·영상·글자·음악으로 영상을 만들고 MP4로 저장하는 무료 영상 편집기 (모아온랩스)",
+  "id": "/",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f766e",
+  "lang": "ko",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
