@@ -6262,6 +6262,50 @@ function gate(msg){root.classList.add('ct-gating');let g=document.getElementById
 
 </script>
 <script>
+/* 콘티온 3.3.2: 템플릿 '사진 자리'에 사진이 바로 들어가게
+ * 템플릿 장면에서 '내 이미지 업로드'로 사진을 올리면, 사진을 화면 가운데에 따로 띄우지 않고
+ * '사진 자리' 상자 크기·위치에 맞춰(가득 채우기) 넣고, 안내 글자와 자리 상자는 지웁니다.
+ * - 사진 자리(또는 그 상자)를 선택해 두었으면 그 자리, 아니면 장면의 첫 번째 사진 자리에 넣습니다.
+ * - 사진 자리가 없는 장면에서는 예전처럼 가운데에 넣습니다. 실행취소(Ctrl+Z)로 되돌릴 수 있습니다. */
+(()=>{'use strict';
+if(typeof addElement!=='function')return;
+const isSlotText=e=>e&&e.type==='text'&&/^\s*사진 자리/.test(String(e.text||''));
+const inside=(r,t)=>t.x>=r.x-4&&t.y>=r.y-4&&t.x+t.w<=r.x+r.w+4&&t.y+t.h<=r.y+r.h+4;
+function findSlot(s){
+ const els=s.elements;const sel=els.find(e=>e.id===selectedElement);
+ let t=null;
+ if(isSlotText(sel))t=sel;
+ else if(sel&&sel.type==='shape')t=els.find(e=>isSlotText(e)&&inside(sel,e))||null;
+ if(!t)t=els.find(isSlotText)||null;
+ if(!t)return null;
+ const fullW=(typeof W==='function'?W():1280)*.97;
+ const box=els.filter(e=>e.type==='shape'&&e!==t&&(e.shape==='rect'||!e.shape)&&e.w<fullW&&inside(e,t)).sort((a,b)=>a.w*a.h-b.w*b.h)[0]||null;
+ return {t,box};
+}
+const base=addElement;
+addElement=function(e){
+ try{
+  const fromUpload=e&&e.type==='image'&&!e.name&&e.fit==='contain'&&e.animation==='fade';
+  const s=fromUpload&&scene();const slot=s&&findSlot(s);
+  if(slot){
+   const r=slot.box||slot.t;
+   const at=Math.max(0,s.elements.indexOf(slot.box||slot.t));
+   Object.assign(e,{x:r.x,y:r.y,w:r.w,h:r.h,fit:'cover',radius:slot.box?(slot.box.radius||0):0});
+   checkpoint();
+   s.elements=s.elements.filter(x=>x!==slot.t&&x!==slot.box);
+   s.elements.splice(Math.min(at,s.elements.length),0,e);
+   selectedElement=e.id;showPanel('image');refresh();
+   if(typeof queueAutosave==='function')queueAutosave();
+   toast('사진 자리에 사진을 넣었습니다. 모서리를 끌어 크기를 바꿀 수 있습니다.');
+   return;
+  }
+ }catch(err){console.warn('photo slot',err)}
+ return base(e);
+};
+})();
+
+</script>
+<script>
 let studioApprovedExportJSON14='';async function studioCheckExportReady(){if(exporting)return false;syncFocused();pause();if(studioPack(project)===studioApprovedExportJSON14)return true;closeModal();if(!await studioRunPreflight())return false;studioApprovedExportJSON14=studioPack(project);return true}const studioExportDialog14=exportDialog;exportDialog=async function(){if(await studioCheckExportReady())return studioExportDialog14();};$('#exportTop').onclick=exportDialog;for(const s of project.scenes)for(const e of s.elements)if(e.caption&&e.captionStyle)e.captionStyle=studioNormalizeCaption15(e.captionStyle);studioInitCore();studioInitStorage();currentTime=Math.min(.8,scene().duration/2);draw();updateClock();
 const studioPreviousHelp15=help;help=function(){modal('<h2>콘티온 ContiOn 3.3 · 새 기능</h2><p><b>3.3 자연스러운 AI 음성 · 내 PC에 설치</b>: ‘나레이션’ 메뉴에서 해설 원고를 사람 같은 목소리(10종)로 읽어 나레이션을 만듭니다(Supertonic 3, 처음 한 번 약 380MB 내려받음, PC 밖 전송 없음). 웹 버전은 위쪽 <b>⬇ 내 PC에 설치</b>로 앱처럼 설치하면 인터넷 없이도 실행되고, 새 버전이 나오면 “지금 적용” 안내가 뜹니다.</p><p><b>3.2 이름이 ‘콘티온(ContiOn)’으로 바뀌었습니다.</b> 콘티(영상 설계도)를 켜서 영상으로 만든다는 뜻입니다. 웹 버전(contion.moaonlabs.com)에서도 설치 없이 쓸 수 있고, 업데이트해도 자동 저장된 작업이 그대로 남도록 저장 방식을 고정했습니다. 이전 버전(S&J Vids Studio)에서 만든 작업은 처음 실행할 때 가져오기를 제안합니다.</p><p><b>3.0 모션·쇼츠 업그레이드</b>: ① 속도 곡선 5종·반복 움직임·스톱모션·순차 등장 ② 장면 카메라(천천히 밀기·팬·펀치인·흔들림·플래시) ③ 인포그래픽 12종(그래프·체크리스트·도장·터미널·순서도·손그림·스포트라이트·숫자 롤) ④ 쇼츠 도구(안전영역 가이드·쇼츠 자막 2종·레이아웃 팩 7종) ⑤ 검수(검수 시트 PNG·화면 점검·음악 박자 맞추기). 왼쪽 메뉴의 <b>인포그래픽·쇼츠·검수</b>에서 시작하세요.</p><p><b>2.9 완성본 다시 받기</b>: MP4 출력에 성공하면 결과 파일을 브라우저 저장소에 자동 보관합니다(최근 5개). 결과 창을 닫았거나 다운로드를 놓쳐도 파일 메뉴 → ‘완성본 다시 받기’에서 미리보기·다운로드·삭제할 수 있습니다.</p><p><b>2.8 큰 프로젝트 안정화</b>: 같은 영상·음성을 파일·자동 저장에 한 번만 보관(.sjvids 새 형식, 200MB 제한 해제) · 자동 저장과 변경 확인이 미디어를 다시 복사하지 않음 · 영상 객체가 많아도 열린 재생기를 12개로 유지 · 오디오 작업 한도를 PC 메모리에 맞춰 자동 확대 · 긴 영상 출력이 중간에 끊겨도 같은 설정으로 다시 출력하면 이어서 진행 · 패키지 저장 오류 수정</p><p><b>2.7 3D 소재 40종</b>: 3D 메뉴가 AI·기술(로봇·로봇 팔·AI 칩·뇌·챗봇 말풍선·코드 창·서버·클라우드·톱니바퀴·전구·비전 AI 눈·드론·DNA), 도시·교통(빌딩·마을·자동차·다리·로켓·비행기), 자연·우주(나무·숲·산맥·바다·꽃·행성·태양계·달), 교육·기타(책·학사모·트로피·하트·별·성장 그래프·번개), 효과·배경으로 나뉩니다. 도형 메뉴에서 스타일(홀로그램 선·유리·입체 색)을 고를 수 있습니다.</p><p><b>2.6 손바닥 홀로그램</b>: 손바닥을 위로 편 영상이 있는 장면에서 3D 소재(지구·도시·정육면체 등)를 고르면 ‘✋ 손바닥 홀로그램’ 카드가 나옵니다. 누르면 3D 소재가 손바닥 위에 떠서 손을 따라 움직이고, 손 기울기에 맞춰 기울며, 주먹을 쥐면 사라졌다가 펴면 나타납니다. 빛기둥·빛 고리·줄무늬(스캔라인)·깜박임이 함께 들어갑니다.</p><p><b>2.5 손 자동 추적 (실험)</b>: 손이 나오는 영상이 있는 장면에서 따라가게 할 사진·스티커·글자를 고르면 속성 패널에 ‘손 자동 추적’ 카드가 나옵니다. ‘손 추적 시작’을 누르면 영상 속 손 위치를 찾아 키프레임을 자동으로 만듭니다. 처음 한 번 손 인식 프로그램(약 21MB)을 동의 후 내려받으며, 영상은 PC 밖으로 보내지 않습니다.</p><p><b>2.4 3D 소재</b>: 왼쪽 메뉴의 <b>3D</b>에서 돌아가는 정육면체·3D 도시(빛나는 경로)·지구·빛나는 격자 바닥·연결망·점 구름을 넣습니다. 배경이 투명해 사진·영상 위에 겹칠 수 있고, 도형 메뉴에서 색·속도·확대를 바꿉니다. 3D 엔진(three.js)은 파일 안에 들어 있어 인터넷 없이 동작합니다.</p><p><b>2.3 키프레임</b>: 객체를 고르고 속성 패널의 ‘키프레임’ 카드에서 ◆ 추가(단축키 K) → 재생 헤더를 옮기고 객체를 끌면 그 시점의 위치·크기·회전·불투명도가 자동 기록됩니다. ‘한 칸 ▶’으로 0.1~1초씩 옮기며 손 같은 대상을 따라가게 만들 수 있습니다. 캔버스에 분홍 점선으로 움직임 경로가 보입니다.</p><p><b>2.3 트랙 타임라인</b>: 아래 타임라인의 ‘트랙’ 탭에서 장면 속 객체를 한 줄씩 보며 막대를 끌어 시간을 옮기고 양끝으로 길이를 바꿉니다. ◆를 누르면 그 키프레임으로 이동합니다.</p><p><b>2.2 긴 영상</b>: 50MB가 넘는 영상(최대 1시간)은 프로젝트에 복사하지 않고 PC의 원본 파일을 <b>연결</b>합니다. 다음에 열 때 연결이 끊겨 있으면 화면 위쪽의 ‘다시 연결’을 누르세요. 10분이 넘거나 연결 영상이 있는 프로젝트는 디스크에 바로 기록하는 긴 영상 출력으로 만듭니다(1시간까지).</p><p><b>2.1 라이브·강의 그래픽</b>: 왼쪽 메뉴의 <b>라이브</b>에서 챕터 제목·댓글 카드·분할 화면·인물 창·화면 꺾쇠·로고 라벨·이름표·숫자 강조·말풍선 라벨을 넣을 수 있습니다. 강조 색은 5가지 중에서 고릅니다.</p><p><b>새 글자 효과</b>: 해독 효과(글자가 섞였다가 제자리), 숫자 올라가기, 깜박이는 커서, 글자 간격. 텍스트 메뉴의 ‘라이브 글자 효과’ 카드에서 바로 적용합니다.</p><p><b>새 도형</b>: 빛 번짐·그라데이션 판·모서리 꺾쇠·테두리 상자·격자 배경. 모든 도형에 빛 번짐과 합성 방식을 줄 수 있습니다.</p><p><b>사진·영상</b>: 테두리·빛 번짐·합성 방식(빛 합성은 검은 배경을 지웁니다), 홀로그램 느낌 버튼.</p><p><b>2.0</b>: 영상 속도 0.25~4배 · 여러 객체 동시 선택(Shift·드래그 박스) · 사진 자르기 · 자동 자막(베타, 동의 후 모델 다운로드)</p><p><b>1.6~1.9</b>: 타임라인 분할·잘라내기 · 소리 믹서 · Full HD 출력 · 글자 스타일 · 필터 · 스티커 · 회전</p><p class="hint">연결한 원본 영상은 프로젝트 파일·백업에 들어가지 않으니 원본을 함께 보관하세요. 자동 저장은 브라우저 데이터 삭제 시 사라지므로 파일 백업을 함께 하세요.</p><button id="s15HelpBase" class="soft full">기본 편집·복구 안내</button><button id="s15HelpClose" class="primary full">닫기</button>');$('#s15HelpBase').onclick=studioPreviousHelp15;$('#s15HelpClose').onclick=closeModal};$('#helpBtn').onclick=help;
 
