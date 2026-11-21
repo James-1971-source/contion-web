@@ -35,6 +35,7 @@ self.addEventListener('fetch', e => {
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
   if (url.pathname.endsWith('/version.json') || url.pathname.endsWith('/access.json')) return; // 항상 최신 정보
+  if (url.pathname.startsWith('/library')) return; // 자료실은 편집기와 별도 페이지(캐시·격리 헤더 적용 안 함)
   e.respondWith((async () => {
     const c = await caches.open(CORE);
     const key = req.mode === 'navigate' ? new Request('index.html') : req;
