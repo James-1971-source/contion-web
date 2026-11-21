@@ -28,15 +28,6 @@
       "youtube": "4jdeXuvjtak"
     },
     {
-      "id": "gemini",
-      "section": "ai",
-      "title": "제미나이 최신 기능 (Gemini 4)",
-      "desc": "구글 제미나이의 최신 기능을 실제 화면으로 살펴봅니다.",
-      "level": "수업 영상",
-      "duration": 605,
-      "youtube": "PKNeQzFQmCs"
-    },
-    {
       "id": "claude",
       "section": "ai",
       "title": "Claude 완전정복 (11월 업데이트)",
@@ -53,24 +44,6 @@
       "level": "수업 영상",
       "duration": 862,
       "youtube": "c2WW3GTkUQs"
-    },
-    {
-      "id": "pickle",
-      "section": "ai",
-      "title": "피클 설치와 사용법",
-      "desc": "피클을 설치하고 기본 사용법을 익힙니다.",
-      "level": "도구 소개",
-      "duration": 402,
-      "youtube": "T3tcQrMA0Eg"
-    },
-    {
-      "id": "aside",
-      "section": "ai",
-      "title": "Aside 설치와 사용법",
-      "desc": "AI 브라우저 Aside를 설치하고 사용하는 방법을 안내합니다.",
-      "level": "도구 소개",
-      "duration": 372,
-      "youtube": "CJ31I5MyuS8"
     },
     {
       "id": "contion-staff",
